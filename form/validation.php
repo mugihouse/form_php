@@ -2,7 +2,7 @@
   function validation($request) {
     $errors = [];
 
-    if(empty($request['your_name']) || 20 > mb_strlen($request['your_name'])) {
+    if(empty($request['your_name']) || 20 < mb_strlen($request['your_name'])) {
       $errors[] = '「氏名」は必須です。20文字以内で入力してください。';
     }
 
@@ -20,7 +20,7 @@
       $errors[] = '「性別」は必須です。';
     }
 
-    if(empty($request['age']) || 6 > $request['age']) {
+    if(empty($request['age']) || 6 < $request['age']) {
       $errors[] = '「年齢」は必須です。';
     }
 
