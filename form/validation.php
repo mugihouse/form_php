@@ -6,7 +6,7 @@
       $errors[] = '「氏名」は必須です。20文字以内で入力してください。';
     }
 
-    if(empty($request['email']) || filter_var($request['email'], FILTER_VALIDATE_EMAIL)) {
+    if(empty($request['email']) || !filter_var($request['email'], FILTER_VALIDATE_EMAIL)) {
       $errors[] = '「メールアドレス」は必須です。正しい形式で入力してください。';
     }
 
